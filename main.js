@@ -189,7 +189,6 @@ class Maybe {
   }
 
   apply = function (func) {
-    debugger;
     if (this.log.length > 0) {
       let cnt = this.log.length;
       console.log("apply() call number: " + cnt);
@@ -277,7 +276,7 @@ let firstFriendGenderMaybeBind = new Maybe("steve")
   .extract();
 
 console.log("Using the Maybe bind scenario - returns null if any bind() calls fail - doesn't blow up");
-console.log(`The maybe bind first friend gender: ${firstFriendGenderMaybeBind}`);
+console.log(`The maybe bind first friend gender is ${firstFriendGenderMaybeBind} due to a bad username`);
 console.log("\r\n");
 console.log("Logging from using Maybe apply")
 console.log("\r\n");
