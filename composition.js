@@ -12,6 +12,14 @@ const plus3 = function (val) {
 
 const compose = function (f, g) {
   return function (x) {
+    // f = plus3(val)
+    // g = plus2(val)
+    // x is the value passed in to the compose(val) call, in this example 10
+    // g, aka plus2(val) gets called first with the parameter passed = 10
+    // g adds val, which is 10, and 2 and returns the result, 12
+    // g returns 12 which is piped in to the input of f, which is plus3(val)
+    // f adds val, which is 12, and 3 and returns the result, 13
+    // f returns 15 which is then returned from the compose function
     return f(g(x));
   }
 }
