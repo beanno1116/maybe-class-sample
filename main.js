@@ -1,6 +1,6 @@
 // Sample code from https://youtu.be/VgA4wCaxp-Q
 
-// Sample data
+// Sample data and Database object
 const users = [
   {
     id: "b1",
@@ -171,6 +171,15 @@ const users = [
     ]
   }
 ]
+const database = {
+  fetch: function (username) {
+    let matchedUsers = users.filter(user => user.username === username);
+    if (matchedUsers.length > 0) {
+      return matchedUsers[0];
+    }
+    return null;
+  }
+}
 
 // Monads - function programming pattern
 
@@ -221,15 +230,7 @@ class Maybe {
 
 
 
-const database = {
-  fetch: function (username) {
-    let matchedUsers = users.filter(user => user.username === username);
-    if (matchedUsers.length > 0) {
-      return matchedUsers[0];
-    }
-    return null;
-  }
-}
+
 
 // EXAMPLE SCENARIO
 /*
